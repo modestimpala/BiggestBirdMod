@@ -11,7 +11,6 @@ using UnityEngine.Networking;
 namespace BiggestBirdMod
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    //[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
     internal class BiggestBirdPlugin : BaseUnityPlugin
     {
         public const string PluginGUID = "com.moddy.biggestbirdmod";
@@ -25,12 +24,12 @@ namespace BiggestBirdMod
 
         private void Awake()
         {
-            configBigChance = Config.Bind("Biggest Bird",      // The section under which the option is shown
-                                        "Chance",  // The key of the configuration option in the configuration file
+            configBigChance = Config.Bind("Biggest Bird",   
+                                        "Chance",  
                                         5, // The default value
                                         "1-100% chance of a bird becoming The Biggest Bird."); // Description 
-            configBigDistance = Config.Bind("Biggest Bird",      // The section under which the option is shown
-                                        "Audio Distance",  // The key of the configuration option in the configuration file
+            configBigDistance = Config.Bind("Biggest Bird",     
+                                        "Audio Distance", 
                                         850f, // The default value
                                         "The audio distance of The Biggest Bird music."); // Description 
 
@@ -43,8 +42,6 @@ namespace BiggestBirdMod
             {
                 Logger.LogFatal("Error loading assetbundle");
             }
-
-            //StartCoroutine(ClipCreator(path));
             bundle.Unload(false);
         }
 
