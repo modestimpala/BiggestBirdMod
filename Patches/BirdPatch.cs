@@ -25,6 +25,9 @@ namespace BiggestBirdMod.Patches
                 audio.Play();
                 Vector3 scale = Vector3.one * 10;
                 __instance.transform.localScale = scale;
+                var drops = __instance.gameObject.GetComponent<DropOnDestroyed>();
+                drops.m_dropWhenDestroyed.m_dropMax = BiggestBirdPlugin.configFeatherFactor.Value;
+                drops.m_dropWhenDestroyed.m_dropMin = BiggestBirdPlugin.configFeatherFactor.Value;
             }
         }
     }

@@ -20,16 +20,21 @@ namespace BiggestBirdMod
         private readonly Harmony harmony = new Harmony(PluginGUID);
         public static AudioClip birdClip;
         public static ConfigEntry<int> configBigChance { get; private set; }
+        public static ConfigEntry<int> configFeatherFactor { get; private set; }
         public static ConfigEntry<float> configBigDistance { get; private set; }
 
         private void Awake()
         {
-            configBigChance = Config.Bind("Biggest Bird",   
-                                        "Chance",  
+            configBigChance = Config.Bind("Biggest Bird",      // The section under which the option is shown
+                                        "Chance",  // The key of the configuration option in the configuration file
                                         5, // The default value
                                         "1-100% chance of a bird becoming The Biggest Bird."); // Description 
-            configBigDistance = Config.Bind("Biggest Bird",     
-                                        "Audio Distance", 
+            configFeatherFactor = Config.Bind("Biggest Bird",      // The section under which the option is shown
+                                        "Feather Multiplication Factor",  // The key of the configuration option in the configuration file
+                                        6, // The default value
+                                        "How many times the feathers are multiplied in the drop table for The Biggest Bird."); // Description 
+            configBigDistance = Config.Bind("Biggest Bird",      // The section under which the option is shown
+                                        "Audio Distance",  // The key of the configuration option in the configuration file
                                         850f, // The default value
                                         "The audio distance of The Biggest Bird music."); // Description 
 
