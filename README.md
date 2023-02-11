@@ -6,6 +6,10 @@ This mod randomly turns birds into The Biggest Bird upon spawn. When a bird is T
 
 This mod is client sided only.
 
+## Building
+
+You'll need to set up references properly, and then you'll need an embedded resource assetbundle called "biggestbirdassets" with an AudioClip called "bird"
+
 ## Installation (manual)
 Put the plugin in your BepInEx/plugins folder.
 
